@@ -1,0 +1,24 @@
+diff -up ucode-master/ucode.c.omv~ ucode-master/ucode.c
+--- ucode-master/ucode.c.omv~	2020-06-18 04:26:11.303976075 +0200
++++ ucode-master/ucode.c	2020-06-18 04:26:56.146475933 +0200
+@@ -26,6 +26,8 @@
+ #include <iconv.h>
+ #include <xdo.h>
+ 
++extern int usleep (__useconds_t __useconds);
++
+ xdo_t* xdo=0;
+ Display* dpy=0;
+ 
+@@ -81,8 +83,10 @@ void type(const uint32_t charcode)
+     iconv_t cd=iconv_open("utf8","utf32");
+     if(iconv(cd,&ins,&inbytes,&outs,&outbytes)==-1)
+         perror("iconv");
+-    else
++    else {
++        XSync(dpy, True); usleep(50000);
+         xdo_enter_text_window(xdo,CURRENTWINDOW,utf8string,12000);
++    }
+ }
+ 
+ void enterUnicode()

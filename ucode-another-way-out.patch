@@ -1,0 +1,12 @@
+diff -up ucode-master/ucode.c.omv~ ucode-master/ucode.c
+--- ucode-master/ucode.c.omv~	2020-06-18 04:28:09.021286684 +0200
++++ ucode-master/ucode.c	2020-06-18 04:29:19.789072305 +0200
+@@ -134,7 +134,7 @@ void enterUnicode()
+                 charcode>>=4;
+                 --i;
+             }
+-            else if(key==XK_space)
++            else if(key==XK_space || key==XK_Return)
+             {
+                 break;
+             }
