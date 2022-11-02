@@ -1,9 +1,8 @@
 Name:		ucode
-Version:	0.20200618
+Version:	0.20221103
 Release:	1
-Source0:	https://github.com/algernon/ucode/archive/master/%{name}-%{version}.tar.gz
-# https://github.com/algernon/ucode/issues/2
-Patch0:		ucode-20200618-issue-2.patch
+URL:		https://git.madhouse-project.org/algernon/ucode
+Source0:	https://git.madhouse-project.org/algernon/ucode/archive/master.tar.gz
 Patch1:		ucode-another-way-out.patch
 Group:		Toys
 License:	LGPLv3+
@@ -25,7 +24,7 @@ by using this sequence:
 5. Press space
 
 %prep
-%autosetup -p1 -n %{name}-master
+%autosetup -p1 -n %{name}
 
 %build
 %{__cc} %{optflags} -std=c99 -o ucode ucode.c -lX11 -lxdo
