@@ -1,6 +1,6 @@
 Name:		ucode
 Version:	0.20221103
-Release:	1
+Release:	2
 URL:		https://git.madhouse-project.org/algernon/ucode
 Source0:	https://git.madhouse-project.org/algernon/ucode/archive/master.tar.gz
 Patch1:		ucode-another-way-out.patch
